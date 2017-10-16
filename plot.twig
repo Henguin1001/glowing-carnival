@@ -1,0 +1,21 @@
+
+{% for building in buildings %}
+  %{{building.name}}
+  {% if building.isNotZero %}
+      X = [ {% for item in building.amount %}
+    {{item}}{% if not loop.last %},{% endif %}
+    {% endfor %} ];
+    labels = { {% for item in building.labels %}
+    '{{item}}'{% if not loop.last %},{% endif %}
+    {% endfor %} };
+    pie(X, labels);
+    title('{{building.name}}');
+    {# set(gcf, 'Position', [0 0 800 800]); #}
+    {# legend(labels,'Position',[0 0.02 1.001 0.1], 'FontSize',9); #}
+    {# set(gca,'FontSize',10); #}
+    saveas(gcf,'img/{{building.filename}}.png');
+  {% else %}
+      % This table contains no data
+  {% endif %}
+
+{% endfor %}
