@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "csv": "^1.1.1",
-    "markto": "^1.2.2",
     "twig": "^1.10.5"
   },
   "devDependencies": {},

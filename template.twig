@@ -1,0 +1,7 @@
+{% extends 'base.twig' %}
+{% block body %}
+  {# This runs for each building and outputs to matlab#}
+  pie(X, labels);
+  title('{{building.name}}');
+  saveas(gcf,'img/{{building.filename}}.png');
+{% endblock %}
